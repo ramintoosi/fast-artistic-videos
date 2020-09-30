@@ -1,3 +1,15 @@
+# Differences
+- Dockerfile
+```
+docker build . -t fast_artistic_videos:V0
+```
+And Run it using:
+```
+sudo docker run --gpus all -it --rm --shm-size=11g --ulimit memlock=-1 --ulimit stack=67108864 -p8000:8000 -p8001:8001 -p8002:8002 -vPATH_TO_VIDEO_FOLDER:/videos fast_artistic_videos:V0 /bin/bash
+```
+Your videos are in "/videos" folder.
+- Model download file were corrected.
+
 # Fast Artistic Style Transfer for Video   
 Torch implementation of a faster video stylization approach. See details and demos in [project page](https://zeruniverse.github.io/fast-artistic-videos/).     
 ![demo](https://cloud.githubusercontent.com/assets/4648756/19905301/599ad5fc-a033-11e6-9956-d0898bd581d6.jpg)   
